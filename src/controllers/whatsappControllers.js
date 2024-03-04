@@ -103,6 +103,12 @@ async function getTextUser (messages) {
 
         mediaDescription = mediaDescription.includes('factura') ? `Quiero facturar, aqui tienes la información \n\n ${mediaDescription}` : `Hola soy Gemini, y aqui te paso la descripción de una imagen que me paso el usuario: \n\n ${mediaDescription}`;
 
+        console.log("----------------------------------------------");
+        console.log("mediaDescription ==>");
+        console.log(mediaDescription);
+        console.log("----------------------------------------------");
+
+
         text = mediaDescription;
 
     } 

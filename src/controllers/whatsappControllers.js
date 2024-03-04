@@ -1,8 +1,6 @@
 const verifyToken = (req, res) =>{
-    res.send("Hola verificacion de token");
-    /*
     try {
-        var accessToken = process.env.WHATSAPP_WEBHOOK_KEY;
+        var accessToken = "bdbgdbgdbgrnyrtnytnfgnfg";
         var token = req.query["hub.verify_token"];
         var challenge = req.query["hub.challenge"];
 
@@ -16,7 +14,6 @@ const verifyToken = (req, res) =>{
     } catch (error) {
         res.status(400).send();
     }
-    */
 }
 
 async function recivedMessage (req, res) {

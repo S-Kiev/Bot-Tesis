@@ -36,13 +36,13 @@ async function recivedMessage (req, res) {
     if (typeof messageObject != 'undefined'){
         var messages = messageObject[0];
         var number = messages['from']; 
+
         var text = await getTextUser(messages);
 
         if (text != '') {
 
             await process.processMessage(text, number);
         } 
-
         //Seguir desde aqui
     }
 

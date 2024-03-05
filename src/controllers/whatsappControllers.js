@@ -101,7 +101,11 @@ async function getTextUser (messages) {
         // 4. procesar la imagen a formato png y enviarlo a google
         let mediaDescription = await google.geminiImageService(binaryMedia, mediaType, textUser, typeMessage);
 
-        mediaDescription = mediaDescription.includes('Factura') ? `Quiero facturar, aqui tienes la información \n\n ${mediaDescription}` : `Hola soy Gemini, y aqui te paso la descripción de una imagen que me paso el usuario: \n\n ${mediaDescription}`;
+        if (mediaDescription.includes('Factura') || mediaDescription.includes('factura') || mediaDescription.includes('Pago') || mediaDescription.includes('pago') || mediaDescription.includes('Abono') || mediaDescription.includes('abono')) {
+            mediaDescription = `Quiero facturar, aqui tienes la información \n\n ${mediaDescription}`;
+        } else {
+            mediaDescription = `Hola soy Gemini, y aqui te paso la descripción de una imagen que me paso el usuario: \n\n ${mediaDescription}`;
+        }
 
         console.log("----------------------------------------------");
         console.log("Condicion ==>");
